@@ -1,5 +1,6 @@
 package com.element.androidwebserver;
 
+import android.content.res.AssetManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -36,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume() {
         super.onResume();
+        AssetManager assetManager = getAssets();
         try {
-            server = new MyServer();
+            server = new MyServer(assetManager, getFilesDir());
         } catch (IOException e) {
             e.printStackTrace();
         }
