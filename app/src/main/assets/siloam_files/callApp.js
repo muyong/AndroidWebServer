@@ -14,6 +14,7 @@ $(document).ready(function() {
 
 	ws.onmessage = function(event) {
 	    //alert("get message " + event.data);
+        $("#messages").empty();
 	    var message = JSON.parse(event.data);
 
 	    if(message.type === "enroll") {
@@ -26,8 +27,10 @@ $(document).ready(function() {
 	    } else if(message.type === "auth") {
 	        if(message.result === 1)
                 $("#messages").append("<p>User verified!</p>");
-            else
+            else {
                 $("#messages").append("<p>User verification fails.</p>");
+                $("#messages").append("<p>Detailed message: " + message.message + "</p>");
+            }
 	    }
 	};
 
