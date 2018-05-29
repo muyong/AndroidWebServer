@@ -1,7 +1,13 @@
-$("#callApp").click(function(){
+$("#enroll").click(function(){
   //alert("will call app");
-  window.location.href = "callapp://startapp";
+  window.location.href = "enroll://enroll";
 });
+
+$("#auth").click(function(){
+  //alert("will call app");
+  window.location.href = "auth://auth";
+});
+
 
 $(document).ready(function() {
 	ws = new WebSocket("ws://localhost:8025/ws/chat");
