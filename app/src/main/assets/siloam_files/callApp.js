@@ -1,11 +1,11 @@
 $("#enroll").click(function(){
   //alert("will call app");
-  window.location.href = "enroll://enroll?firstName=" + $("#firstname").val() + "&lastName=" + $("#lastname").val();
+  window.location.href = "demo://enroll?firstName=" + $("#firstname").val() + "&lastName=" + $("#lastname").val();
 });
 
 $("#auth").click(function(){
   //alert("will call app");
-  window.location.href = "auth://auth?userId=" + $("#userid").val();
+  window.location.href = "demo://auth?userId=" + $("#userid").val();
 });
 
 
@@ -13,12 +13,12 @@ $(document).ready(function() {
 	ws = new WebSocket("ws://localhost:8025/ws/chat");
 
 	ws.onmessage = function(event) {
-	    alert("get message " + event.data);
+	    //alert("get message " + event.data);
 	    var message = JSON.parse(event.data);
 
 	    if(message.type === "enroll") {
 	        if(message.result === 1) {
-	            alert("success with userid " + message.userid);
+	            //alert("success with userid " + message.userid);
 	            $("#messages").append("<p>User enroll success!</p>");
 	            $("#messages").append("<p>User id: " + message.userid + "</p>");
 	        } else
