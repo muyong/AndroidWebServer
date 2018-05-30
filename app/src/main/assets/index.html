@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Siloam Hospital</title>
     <link rel="apple-touch-icon" href="./siloam_files/apple-touch-icon.png">
     <link rel="shortcut icon" href="./siloam_files/favicon.ico">
-    <link rel="stylesheet" href="./siloam_files/w3.css">
-
-    <link rel="stylesheet" href="./siloam_files/bootstrap.css">
-    <link rel="stylesheet" href="./siloam_files/bootstrap-select.css">
-    <link rel="stylesheet" href="./siloam_files/main.css">
-    <link rel="stylesheet" href="./siloam_files/font-awesome.css">
-    <link rel="stylesheet" href="./siloam_files/jquery.bxslider.css">
-    <link rel="stylesheet" href="./siloam_files/custom.css">
-    <link rel="stylesheet" href="./siloam_files/typeahead.css">
-    <link rel="stylesheet" href="./siloam_files/home.css">
+    <link rel="stylesheet" href="./siloam_files/bootstrap.min.css">
     <style>
-			body {
-				background-image: url("./siloam_files/body_bg.png");
-			}
-			.myButton {
+        body {
+            background-image: url("./siloam_files/body_bg.png");
+            background-repeat:repeat-x;
+        }
+        .carousel {
+            top: 80px;
+        }
+        .carousel img {
+            width:100% !important;
+            min-width:100 !important;
+            height: auto;
+        }
+        .myButton {
 				-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 				-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
 				box-shadow:inset 0px 1px 0px 0px #bbdaf7;
@@ -57,199 +58,80 @@
 				position:relative;
 				top:1px;
 			}
-			.main-wrapper {
-                margin-bottom: -1100px;
-            }
-		</style>
+			.button-section {
+			    position: relative;
+			    top: 40px;
+			    margin: auto;
+			    width: 50%;
+			}
 
-    <link href="./siloam_files/animated.css" rel="stylesheet" type="text/css">
-</head>
-
-<body class="main-page">
-
-<div class="main-wrapper">
-    <!--ul id="navbar-wrapper">
-                                <li><a href="https://www.siloamhospitals.com/?EN">Home</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/our-hospitals.html?EN">Our Hospitals</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/our-specialties.html?EN">Our Specialties</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/plan-your-visit.html?EN">Plan Your Visit</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/news-events/media-coverage.html?EN">Media Coverage</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/career.html?EN">Career With Us</a>
-                        </li>
-    </ul-->
-    <div class="overlay-close"></div>
-    <header>
-        <!--div class="container">
-            <div>
-                <div-->
-                    <div>
-                        <!--a class="nav-toggle" data-target="#navbar-wrapper">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="nav-txt">MENU</span>
-                        </a-->
-                        <a class="logo" href="https://www.siloamhospitals.com/">
-                            <img src="./siloam_files/logo.png">
-                        </a>
-                    </div>
-                <!--/div>
-            </div>
-        </div-->
-    </header>
-    <div style="display: none;">
+    </style>
+<body>
+    <div>
+        <a class="logo" href="https://www.siloamhospitals.com/">
+            <img src="./siloam_files/logo.png">
+        </a>
     </div>
-
-    <div class="container-fluid">
-        <div class="jumbotron row" id="facility">
-            <div class="top-img carousel slide carousel-fade" data-ride="carousel" id="home-slide">
-                <div class="carousel-inner" role="listbox">
-                    <div class="item">
-                        <img src="./siloam_files/welcome-to-siloam-hospitals2.jpg">
-                        <div class="caption">
-                            <h3>Welcome to Siloam Hospitals</h3>
-                            <p>The Largest Healthcare Provider of Choice in Indonesia</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="./siloam_files/number-emergency2.jpg">
-                        <div class="caption">
-                            <h3>Save This Number to Save Each Other</h3>
-                            <p>Call us for any emergency cases</p>
-                        </div>
-                    </div>
-                    <div class="item active">
-                        <img src="./siloam_files/partner-in-healthcare.jpg">
-                        <div class="caption">
-                            <h3>Partner in Healthcare</h3>
-                            <p>Our highly qualified team is ready to help you</p>
-                        </div>
-                    </div>
-                    <div class="item ">
-                        <img src="./siloam_files/send-personalised-cards.jpg">
-                        <div class="caption">
-                            <h3>Send Personalised Cards</h3>
-                            <p>Let's show your loved ones how much you care</p>
-                            <a href="http://www.siloamhospitals.com/ecard.html" class="slide-link">e-greeting</a>
-                        </div>
-                    </div>
-                    <div class="item ">
-                        <img src="./siloam_files/HARDIKNAS SHJR-GrandOpeningAds-BannerWebsite2.jpg">
-                        <div class="caption">
-                            <h3>Bangsa Yang Sehat Untuk Masa Depan Yang Cerah</h3>
-                            <p>Untuk informasi dan pendaftaran, hubungi 1-500-181</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#home-slide" data-slide-to="0" class=""></li>
-                    <li data-target="#home-slide" data-slide-to="1" class=""></li>
-                    <li data-target="#home-slide" data-slide-to="2" class="active"></li>
-                    <li data-target="#home-slide" data-slide-to="3" class=""></li>
-                    <li data-target="#home-slide" data-slide-to="4" class=""></li>
-                </ol>
-                <!-- End Indicator -->
-            </div>
+    <div class="button-section">
+        <div class="col-md-4 col-sm-4">
+            <a href="enroll.html" class="myButton">
+                <span class="text">Enrollment</span>
+            </a>
         </div>
-
-
+        <div class="col-md-4 col-sm-4">
+            <a href="appointment.html" class="myButton">
+                <span class="text">Appointment</span>
+            </a>
+        </div>
     </div>
-
-</div>
-<footer>
-    <div class="container">
-        <div class="container-fluid">
-            <section>
-                <div class="row">
-                    <!-- mod update  -->
-                    <div class="col-md-4 col-sm-4">
-
-                        <a href="enroll.html" class="myButton">
-			      <span>
-			      </span>
-                            <span class="text">Enrollment</span>
-                        </a>
-                    </div>
-                    <div class="col-md-4 col-sm-4">
-
-                        <a href="appointment.html" class="myButton">
-			      <span>
-			      </span>
-                            <span class="text">Appointment</span>
-                        </a>
-                    </div>
-
+    <div class="carousel slide" data-ride="carousel" id="home-slide">
+        <div class="carousel-inner">
+            <div class="item">
+                <img src="./siloam_files/welcome-to-siloam-hospitals2.jpg">
+                <div class="carousel-caption">
+                    <h3>Welcome to Siloam Hospitals</h3>
+                    <p>The Largest Healthcare Provider of Choice in Indonesia</p>
                 </div>
-            </section>
-        </div>
-        <div class="row">
-            <div class="row footer-text">
-                <div class="col-md-12" align="center">
-                    <ul>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/about-us.html">About Us</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/investor-relations.html">Investor Relations</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/news-events/media-coverage.html?EN">News &amp; Events</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/contact-us.html">Contact Us</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/faq.html">FAQ</a></h6>
-                        </li>
-                    </ul>
+            </div>
+            <div class="item">
+                <img src="./siloam_files/number-emergency2.jpg">
+                <div class="carousel-caption">
+                    <h3>Save This Number to Save Each Other</h3>
+                    <p>Call us for any emergency cases</p>
+                </div>
+            </div>
+            <div class="item active">
+                <img src="./siloam_files/partner-in-healthcare.jpg">
+                <div class="carousel-caption">
+                    <h3>Partner in Healthcare</h3>
+                    <p>Our highly qualified team is ready to help you</p>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="./siloam_files/send-personalised-cards.jpg">
+                <div class="carousel-caption">
+                    <h3>Send Personalised Cards</h3>
+                    <p>Let's show your loved ones how much you care</p>
+                    <a href="http://www.siloamhospitals.com/ecard.html" class="slide-link">e-greeting</a>
+                </div>
+            </div>
+            <div class="item ">
+                <img src="./siloam_files/HARDIKNAS SHJR-GrandOpeningAds-BannerWebsite2.jpg">
+                <div class="carousel-caption">
+                    <h3>Bangsa Yang Sehat Untuk Masa Depan Yang Cerah</h3>
+                    <p>Untuk informasi dan pendaftaran, hubungi 1-500-181</p>
                 </div>
             </div>
         </div>
-
-        <div class="row footer_copy">
-            <div class="col-md-12" align="center">
-                <p>Copyright © 2016. Siloam Hospitals Groups</p>
-            </div>
-        </div>
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#home-slide" data-slide-to="0" class=""></li>
+            <li data-target="#home-slide" data-slide-to="1" class=""></li>
+            <li data-target="#home-slide" data-slide-to="2" class="active"></li>
+            <li data-target="#home-slide" data-slide-to="3" class=""></li>
+            <li data-target="#home-slide" data-slide-to="4" class=""></li>
+        </ol>
+        <!-- End Indicator -->
     </div>
-</footer>
-<script type="text/javascript">
-			var IMG_URL = "https://www.siloamhospitals.com/assets/uploads/";
-		</script>
-<script src="./siloam_files/jquery-1.7.2.min.js"></script>
-<!--<script src="https://www.siloamhospitals.com/assets/js/vendor/jquery-1.12.4.min.js"></script>-->
-<script src="./siloam_files/jquery.bxslider.min.js"></script>
-<script src="./siloam_files/bootstrap.js"></script>
-<script src="./siloam_files/bootstrap-select.js"></script>
-<script src="./siloam_files/bloodhound.min.js"></script>
-<script src="./siloam_files/typehead.min.js"></script><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./siloam_files/RQ7NiRXMcYA.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f23f7c90d1ec7e4" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./siloam_files/ping.html" style="display: none;"></iframe></div></div></div>
-<script src="./siloam_files/main.js"></script>
-<script src="./siloam_files/custom.js"></script>
-<script src="./siloam_files/find-doctor.js"></script>
-<script type="text/javascript">
-
-				$(document).scroll(function() {
-			 	   checkOffset();
-				});
-				function checkOffset() {
-					var homeheight = $('.site-footer').offset().top;
-					//alert(homeheight);
-
-				if($('#appointment').offset().top + $('#appointment').height() > homeheight )
-					$('#appointment').css('position', 'relative');
-				if($(document).scrollTop() + window.innerHeight < $('.site-footer').offset().top)
-						 $('#appointment').css('position', 'fixed');
-
-				}
-
-
-		</script>
-
-
-</body></html>
+</body>
+</html>

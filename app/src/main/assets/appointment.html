@@ -1,190 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Siloam Hospital</title>
     <link rel="apple-touch-icon" href="./siloam_files/apple-touch-icon.png">
     <link rel="shortcut icon" href="./siloam_files/favicon.ico">
-    <link rel="stylesheet" href="./siloam_files/w3.css">
+    <link rel="stylesheet" href="./siloam_files/bootstrap.min.css">
 
-    <link rel="stylesheet" href="./siloam_files/bootstrap.css">
-    <link rel="stylesheet" href="./siloam_files/bootstrap-select.css">
-    <link rel="stylesheet" href="./siloam_files/main.css">
-    <link rel="stylesheet" href="./siloam_files/font-awesome.css">
-    <link rel="stylesheet" href="./siloam_files/jquery.bxslider.css">
-    <link rel="stylesheet" href="./siloam_files/custom.css">
-    <link rel="stylesheet" href="./siloam_files/typeahead.css">
-    <link rel="stylesheet" href="./siloam_files/home.css">
     <style>
-			body {
-				background-image: url("./siloam_files/body_bg.png");
-			}
-			.myButton {
-				-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
-				-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
-				box-shadow:inset 0px 1px 0px 0px #bbdaf7;
-				background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5));
-				background:-moz-linear-gradient(top, #79bbff 5%, #378de5 100%);
-				background:-webkit-linear-gradient(top, #79bbff 5%, #378de5 100%);
-				background:-o-linear-gradient(top, #79bbff 5%, #378de5 100%);
-				background:-ms-linear-gradient(top, #79bbff 5%, #378de5 100%);
-				background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5',GradientType=0);
-				background-color:#79bbff;
-				-moz-border-radius:6px;
-				-webkit-border-radius:6px;
-				border-radius:6px;
-				border:1px solid #84bbf3;
-				display:inline-block;
-				cursor:pointer;
-				color:#ffffff;
-				font-family:Arial;
-				font-size:15px;
-				font-weight:bold;
-				padding:6px 24px;
-				text-decoration:none;
-				text-shadow:0px 1px 0px #528ecc;
-			}
-			.myButton:hover {
-				background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff));
-				background:-moz-linear-gradient(top, #378de5 5%, #79bbff 100%);
-				background:-webkit-linear-gradient(top, #378de5 5%, #79bbff 100%);
-				background:-o-linear-gradient(top, #378de5 5%, #79bbff 100%);
-				background:-ms-linear-gradient(top, #378de5 5%, #79bbff 100%);
-				background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
-				filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff',GradientType=0);
-				background-color:#378de5;
-			}
-			.myButton:active {
-				position:relative;
-				top:1px;
-			}
-            .title {
-                font-size: 25px;
-            }
-		</style>
-
-    <link href="./siloam_files/animated.css" rel="stylesheet" type="text/css">
-</head>
-
-<body class="main-page">
-
-<div class="main-wrapper">
-    <!--ul id="navbar-wrapper">
-                                <li><a href="https://www.siloamhospitals.com/?EN">Home</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/our-hospitals.html?EN">Our Hospitals</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/our-specialties.html?EN">Our Specialties</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/plan-your-visit.html?EN">Plan Your Visit</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/news-events/media-coverage.html?EN">Media Coverage</a>
-                        </li>
-                       <li><a href="https://www.siloamhospitals.com/career.html?EN">Career With Us</a>
-                        </li>
-    </ul-->
-    <div class="overlay-close"></div>
-    <header>
-        <div class="container">
-            <div>
-                <div>
-                    <div class="pull-left col-md-3">
-                        <!--a class="nav-toggle" data-target="#navbar-wrapper">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="nav-txt">MENU</span>
-                        </a-->
-                        <a class="logo" href="https://www.siloamhospitals.com/">
-                            <img src="./siloam_files/logo.png">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    <div style="display: none;">
+        body {
+            background-image: url("./siloam_files/body_bg.png");
+            background-repeat:repeat-x;
+        }
+        .action {
+            position: relative;
+            top: 40px;
+            margin: auto;
+            width: 50%;
+		}
+        .title {
+            font-size: 25px;
+        }
+    </style>
+<body>
+    <div>
+        <a class="logo" href="https://www.siloamhospitals.com/">
+            <img src="./siloam_files/logo.png">
+        </a>
     </div>
-</div>
+    <div class="action">
+        <span class="text title">Make an Appointment</span>
+        <br/><br/>
+        <form id="main" method="post">
+            <span class="text">User ID</span>
+            <input id="userid" type="text" />
+            <br/><br/>
+            <button type="button" id="auth">Scan Person</button>
+        </form>
+        <div id="messages">
+        </div>
+    </div>
+    <script src="./siloam_files/jquery-1.7.2.min.js"></script>
+    <script src="./siloam_files/callApp.js"></script>
 </body>
-<footer>
-    <div class="container">
-        <div class="container-fluid">
-            <div class="row">
-                <span class="text title">Make an Appointment</span>
-                <br/><br/>
-                <form id="main" method="post">
-                    <span class="text">User ID</span>
-                    <input id="userid" type="text" />
-                    <br/><br/>
-                    <button type="button" id="auth">Scan Person</button>
-                </form>
-                <div id="messages">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="row footer-text">
-                <div class="col-md-12" align="center">
-                    <ul>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/about-us.html">About Us</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/investor-relations.html">Investor Relations</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/news-events/media-coverage.html?EN">News &amp; Events</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/contact-us.html">Contact Us</a></h6>
-                        </li>
-                        <li>
-                            <h6><a href="https://www.siloamhospitals.com/faq.html">FAQ</a></h6>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="row footer_copy">
-            <div class="col-md-12" align="center">
-                <p>Copyright © 2016. Siloam Hospitals Groups</p>
-            </div>
-        </div>
-    </div>
-</footer>
-<script type="text/javascript">
-			var IMG_URL = "https://www.siloamhospitals.com/assets/uploads/";
-		</script>
-<script src="./siloam_files/jquery-1.7.2.min.js"></script>
-<!--<script src="https://www.siloamhospitals.com/assets/js/vendor/jquery-1.12.4.min.js"></script>-->
-<script src="./siloam_files/jquery.bxslider.min.js"></script>
-<script src="./siloam_files/bootstrap.js"></script>
-<script src="./siloam_files/bootstrap-select.js"></script>
-<script src="./siloam_files/bloodhound.min.js"></script>
-<script src="./siloam_files/typehead.min.js"></script><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./siloam_files/RQ7NiRXMcYA.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="f23f7c90d1ec7e4" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./siloam_files/ping.html" style="display: none;"></iframe></div></div></div>
-<script src="./siloam_files/main.js"></script>
-<script src="./siloam_files/custom.js"></script>
-<script src="./siloam_files/find-doctor.js"></script>
-<script src="./siloam_files/callApp.js"></script>
-<script type="text/javascript">
-
-				$(document).scroll(function() {
-			 	   checkOffset();
-				});
-				function checkOffset() {
-					var homeheight = $('.site-footer').offset().top;
-					//alert(homeheight);
-
-				if($('#appointment').offset().top + $('#appointment').height() > homeheight )
-					$('#appointment').css('position', 'relative');
-				if($(document).scrollTop() + window.innerHeight < $('.site-footer').offset().top)
-						 $('#appointment').css('position', 'fixed');
-
-				}
-
-
-		</script>
-
-
 </html>
