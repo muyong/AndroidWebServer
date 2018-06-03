@@ -9,6 +9,13 @@ $("#auth").click(function(){
   window.location.href = "demo://auth?userId=" + idSplitted[1];
 });
 
+$("#btn_appointment").click(function() {
+    alert("Appointment made at " + $("#datepicker").val() + " " + $("#appointment_time").val());
+    $("#make_appointment_div").hide();
+    document.getElementById("main_appoint").reset();
+    document.getElementById("make_appointment").reset();
+});
+
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -33,6 +40,7 @@ function getCookie(cname) {
 }
 
 $(document).ready(function() {
+    $("#make_appointment_div").hide();
 	ws = new WebSocket("ws://localhost:8025/ws/chat");
 
 	ws.onmessage = function(event) {
@@ -65,8 +73,11 @@ $(document).ready(function() {
 	        } else
 	            $("#messages").append("<p>User enroll not success.</p>");
 	    } else if(message.type === "auth") {
-	        if(message.result === 1)
+	        if(message.result === 1) {
                 $("#messages").append("<p>User verified!</p>");
+                $("#messages").append("<p>Please select a date for the appointment</p>");
+                $("#make_appointment_div").show();
+            }
             else {
                 $("#messages").append("<p>User verification fails.</p>");
                 $("#messages").append("<p>Detailed message: " + message.message + "</p>");
@@ -97,7 +108,7 @@ $(document).ready(function() {
         }
 		ws.send(JSON.stringify(message));
 		$("#message-text").val("");
-	});
+	});*/
 
     //alert("user id array: " + getCookie('userIdArray'));
 	var userArray = JSON.parse(getCookie('userArray'));
@@ -114,5 +125,5 @@ $(document).ready(function() {
        var lastName = nameSplitted[1];
        $("#firstname_appoint").val(firstName);
        $("#lastname_appoint").val(lastName);
-    })
+    });
 });

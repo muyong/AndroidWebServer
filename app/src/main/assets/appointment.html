@@ -5,6 +5,7 @@
     <link rel="apple-touch-icon" href="./siloam_files/apple-touch-icon.png">
     <link rel="shortcut icon" href="./siloam_files/favicon.ico">
     <link rel="stylesheet" href="./siloam_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./siloam_files/jquery-ui.css">
 
     <style>
         body {
@@ -51,11 +52,40 @@
             <input id="lastname_appoint" disabled type="text" />
             <br/><br/>
             <button type="button" id="auth">Scan Person</button>
+            <br/><br/>
         </form>
         <div id="messages">
+        </div>
+        <div id="make_appointment_div">
+            <form id="make_appointment" method="post">
+                Date: <input type="text" id="datepicker">
+                Time:
+                <select id="appointment_time">
+                    <option disabled selected>Select a Time</option>
+                    <option>9:00am</option>
+                    <option>10:00am</option>
+                    <option>11:00am</option>
+                    <option>12:00pm</option>
+                    <option>1:00pm</option>
+                    <option>2:00pm</option>
+                    <option>3:00pm</option>
+                    <option>4:00pm</option>
+                    <option>5:00pm</option>
+                </select>
+                <br/><br/>
+                <button type="button" id="btn_appointment">Send</button>
+            </form>
         </div>
     </div>
     <script src="./siloam_files/jquery-1.7.2.min.js"></script>
     <script src="./siloam_files/callApp.js"></script>
+    <script src="./siloam_files/jquery-1.12.4.js"></script>
+    <script src="./siloam_files/jquery-ui.js"></script>
+    <script>
+      $( function() {
+        $( "#datepicker" ).datepicker();
+      } );
+    </script>
+
 </body>
 </html>
